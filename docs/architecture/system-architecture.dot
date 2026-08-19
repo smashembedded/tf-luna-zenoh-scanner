@@ -1,0 +1,191 @@
+digraph TF_Luna_Zenoh_Scanner {
+
+    graph [
+        rankdir=LR,
+        bgcolor="#0D1117",
+        pad="0.35",
+        nodesep="0.55",
+        ranksep="0.85",
+        splines=ortho,
+        fontname="Inter",
+        fontcolor="#E6EDF3"
+    ];
+
+    node [
+        shape=box,
+        style="rounded,filled",
+        fontname="Inter",
+        fontsize=13,
+        fontcolor="#F0F6FC",
+        color="#30363D",
+        penwidth=1.5,
+        margin="0.22,0.14"
+    ];
+
+    edge [
+        color="#58A6FF",
+        penwidth=2.2,
+        arrowsize=0.8,
+        fontname="Inter",
+        fontsize=10,
+        fontcolor="#8B949E"
+    ];
+
+    /* =========================
+       EMBEDDED
+       ========================= */
+
+    subgraph cluster_hardware {
+
+        label="  EMBEDDED  ";
+        labelloc="t";
+        labeljust="c";
+
+        style="rounded,filled";
+        color="#30363D";
+        fillcolor="#111820";
+        penwidth=1.5;
+
+        fontname="Inter Bold";
+        fontsize=12;
+        fontcolor="#58A6FF";
+
+        lidar [
+            label="TF-Luna\nLiDAR",
+            fillcolor="#172B3A",
+            color="#00D9FF",
+            penwidth=2.2
+        ];
+
+        esp32 [
+            label="ESP32\nScanner",
+            fillcolor="#172B3A",
+            color="#58A6FF",
+            penwidth=2.2
+        ];
+
+        servo [
+            label="Servo\nMotor",
+            fillcolor="#172B3A",
+            color="#7D8FA3",
+            penwidth=2.0
+        ];
+
+        lidar -> esp32 [
+            label=" UART ",
+            color="#00D9FF",
+            fontcolor="#00D9FF"
+        ];
+
+        esp32 -> servo [
+            label=" PWM ",
+            color="#7D8FA3",
+            fontcolor="#7D8FA3"
+        ];
+    }
+
+    /* =========================
+       ZENOH
+       ========================= */
+
+    subgraph cluster_network {
+
+        label="  DISTRIBUTED COMMUNICATION  ";
+        labelloc="t";
+        labeljust="c";
+
+        style="rounded,filled";
+        color="#30363D";
+        fillcolor="#12111C";
+        penwidth=1.5;
+
+        fontname="Inter Bold";
+        fontsize=12;
+        fontcolor="#A371F7";
+
+        zenoh [
+            label="Eclipse Zenoh\nzenoh-pico",
+            fillcolor="#211A32",
+            color="#A371F7",
+            penwidth=2.2
+        ];
+
+        router [
+            label="Zenoh Router\nzenohd",
+            fillcolor="#211A32",
+            color="#BF8CFF",
+            penwidth=2.2
+        ];
+
+        zenoh -> router [
+            label=" Wi-Fi ",
+            color="#A371F7",
+            fontcolor="#A371F7"
+        ];
+    }
+
+    /* =========================
+       HOST
+       ========================= */
+
+    subgraph cluster_host {
+
+        label="  HOST  ";
+        labelloc="t";
+        labeljust="c";
+
+        style="rounded,filled";
+        color="#30363D";
+        fillcolor="#161B22";
+        penwidth=1.5;
+
+        fontname="Inter Bold";
+        fontsize=12;
+        fontcolor="#8B949E";
+
+        subscriber [
+            label="Python\nZenoh Subscriber",
+            fillcolor="#21262D",
+            color="#8B949E",
+            penwidth=2.0
+        ];
+
+        viewer [
+            label="Real-time\nLiDAR Viewer",
+            fillcolor="#21262D",
+            color="#B1BAC4",
+            penwidth=2.2
+        ];
+
+        subscriber -> viewer [
+            label=" measurements ",
+            color="#8B949E",
+            fontcolor="#8B949E"
+        ];
+    }
+
+    /* =========================
+       MAIN DATA FLOW
+       ========================= */
+
+    esp32 -> zenoh [
+        label=" Wi-Fi / Zenoh ",
+        color="#58A6FF",
+        fontcolor="#58A6FF",
+        penwidth=2.5
+    ];
+
+    router -> subscriber [
+        label=" measurements ",
+        color="#8B949E",
+        fontcolor="#8B949E",
+        penwidth=2.5
+    ];
+
+    /* =========================
+       ALIGNMENT
+       ========================= */
+
+    lidar -> zenoh [style=invis];
+    servo -> router [style=invis];
+}
