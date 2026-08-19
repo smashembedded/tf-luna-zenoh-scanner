@@ -1,0 +1,42 @@
+# PlatformIO
+.pio/
+.piolibdeps/
+.vscode/
+*.pioenvs/
+*.pyc
+__pycache__/
+
+# Python
+.venv/
+venv/
+ENV/
+env/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Build artifacts
+build/
+dist/
+*.egg-info/
+
+# IDEs
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+
+# OS files
+Thumbs.db
+
+# Docker
+docker-data/

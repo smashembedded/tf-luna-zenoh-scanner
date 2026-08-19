@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1237pt" height="254pt" viewBox="0.00 0.00 1237.00 254.00">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(25.2 229.2)">
+<title>TF_Luna_Zenoh_Scanner</title>
+<polygon fill="#0d1117" stroke="none" points="-25.2,25.2 -25.2,-229.2 1212.22,-229.2 1212.22,25.2 -25.2,25.2"/>
+<g id="clust1" class="cluster">
+<title>cluster_hardware</title>
+<path fill="#111820" stroke="#30363d" stroke-width="1.5" d="M20,-106C20,-106 467.17,-106 467.17,-106 473.17,-106 479.17,-112 479.17,-118 479.17,-118 479.17,-184 479.17,-184 479.17,-190 473.17,-196 467.17,-196 467.17,-196 20,-196 20,-196 14,-196 8,-190 8,-184 8,-184 8,-118 8,-118 8,-112 14,-106 20,-106"/>
+<text xml:space="preserve" text-anchor="middle" x="243.58" y="-181.2" font-family="Inter Bold" font-size="12.00" fill="#58a6ff">  EMBEDDED  </text>
+</g>
+<g id="clust2" class="cluster">
+<title>cluster_network</title>
+<path fill="#12111c" stroke="#30363d" stroke-width="1.5" d="M389.87,-8C389.87,-8 682.69,-8 682.69,-8 688.69,-8 694.69,-14 694.69,-20 694.69,-20 694.69,-86 694.69,-86 694.69,-92 688.69,-98 682.69,-98 682.69,-98 389.87,-98 389.87,-98 383.87,-98 377.87,-92 377.87,-86 377.87,-86 377.87,-20 377.87,-20 377.87,-14 383.87,-8 389.87,-8"/>
+<text xml:space="preserve" text-anchor="middle" x="536.28" y="-83.2" font-family="Inter Bold" font-size="12.00" fill="#a371f7">  DISTRIBUTED COMMUNICATION  </text>
+</g>
+<g id="clust3" class="cluster">
+<title>cluster_host</title>
+<path fill="#161b22" stroke="#30363d" stroke-width="1.5" d="M814.89,-8C814.89,-8 1167.02,-8 1167.02,-8 1173.02,-8 1179.02,-14 1179.02,-20 1179.02,-20 1179.02,-86 1179.02,-86 1179.02,-92 1173.02,-98 1167.02,-98 1167.02,-98 814.89,-98 814.89,-98 808.89,-98 802.89,-92 802.89,-86 802.89,-86 802.89,-20 802.89,-20 802.89,-14 808.89,-8 814.89,-8"/>
+<text xml:space="preserve" text-anchor="middle" x="990.95" y="-83.2" font-family="Inter Bold" font-size="12.00" fill="#8b949e">  HOST  </text>
+</g>
+<!-- lidar -->
+<g id="node1" class="node">
+<title>lidar</title>
+<path fill="#172b3a" stroke="#00d9ff" stroke-width="2.2" d="M81.89,-165.68C81.89,-165.68 28,-165.68 28,-165.68 22,-165.68 16,-159.68 16,-153.68 16,-153.68 16,-126.32 16,-126.32 16,-120.32 22,-114.32 28,-114.32 28,-114.32 81.89,-114.32 81.89,-114.32 87.89,-114.32 93.89,-120.32 93.89,-126.32 93.89,-126.32 93.89,-153.68 93.89,-153.68 93.89,-159.68 87.89,-165.68 81.89,-165.68"/>
+<text xml:space="preserve" text-anchor="middle" x="54.95" y="-143.9" font-family="Inter" font-size="13.00" fill="#f0f6fc">TF-Luna</text>
+<text xml:space="preserve" text-anchor="middle" x="54.95" y="-128.3" font-family="Inter" font-size="13.00" fill="#f0f6fc">LiDAR</text>
+</g>
+<!-- esp32 -->
+<g id="node2" class="node">
+<title>esp32</title>
+<path fill="#172b3a" stroke="#58a6ff" stroke-width="2.2" d="M249.66,-165.68C249.66,-165.68 200.11,-165.68 200.11,-165.68 194.11,-165.68 188.11,-159.68 188.11,-153.68 188.11,-153.68 188.11,-126.32 188.11,-126.32 188.11,-120.32 194.11,-114.32 200.11,-114.32 200.11,-114.32 249.66,-114.32 249.66,-114.32 255.66,-114.32 261.66,-120.32 261.66,-126.32 261.66,-126.32 261.66,-153.68 261.66,-153.68 261.66,-159.68 255.66,-165.68 249.66,-165.68"/>
+<text xml:space="preserve" text-anchor="middle" x="224.89" y="-143.9" font-family="Inter" font-size="13.00" fill="#f0f6fc">ESP32</text>
+<text xml:space="preserve" text-anchor="middle" x="224.89" y="-128.3" font-family="Inter" font-size="13.00" fill="#f0f6fc">Scanner</text>
+</g>
+<!-- lidar&#45;&gt;esp32 -->
+<g id="edge1" class="edge">
+<title>lidar-&gt;esp32</title>
+<path fill="none" stroke="#00d9ff" stroke-width="2.2" d="M94.79,-140C94.79,-140 175.71,-140 175.71,-140"/>
+<polygon fill="#00d9ff" stroke="#00d9ff" stroke-width="2.2" points="175.71,-142.8 183.71,-140 175.71,-137.2 175.71,-142.8"/>
+<text xml:space="preserve" text-anchor="middle" x="141" y="-157" font-family="Inter" font-size="10.00" fill="#00d9ff"> UART </text>
+</g>
+<!-- zenoh -->
+<g id="node4" class="node">
+<title>zenoh</title>
+<path fill="#211a32" stroke="#a371f7" stroke-width="2.2" d="M480.28,-67.68C480.28,-67.68 397.87,-67.68 397.87,-67.68 391.87,-67.68 385.87,-61.68 385.87,-55.68 385.87,-55.68 385.87,-28.32 385.87,-28.32 385.87,-22.32 391.87,-16.32 397.87,-16.32 397.87,-16.32 480.28,-16.32 480.28,-16.32 486.28,-16.32 492.28,-22.32 492.28,-28.32 492.28,-28.32 492.28,-55.68 492.28,-55.68 492.28,-61.68 486.28,-67.68 480.28,-67.68"/>
+<text xml:space="preserve" text-anchor="middle" x="439.08" y="-45.9" font-family="Inter" font-size="13.00" fill="#f0f6fc">Eclipse Zenoh</text>
+<text xml:space="preserve" text-anchor="middle" x="439.08" y="-30.3" font-family="Inter" font-size="13.00" fill="#f0f6fc">zenoh-pico</text>
+</g>
+<!-- lidar&#45;&gt;zenoh -->
+<!-- servo -->
+<g id="node3" class="node">
+<title>servo</title>
+<path fill="#172b3a" stroke="#7d8fa3" stroke-width="2" d="M459.17,-165.68C459.17,-165.68 418.99,-165.68 418.99,-165.68 412.99,-165.68 406.99,-159.68 406.99,-153.68 406.99,-153.68 406.99,-126.32 406.99,-126.32 406.99,-120.32 412.99,-114.32 418.99,-114.32 418.99,-114.32 459.17,-114.32 459.17,-114.32 465.17,-114.32 471.17,-120.32 471.17,-126.32 471.17,-126.32 471.17,-153.68 471.17,-153.68 471.17,-159.68 465.17,-165.68 459.17,-165.68"/>
+<text xml:space="preserve" text-anchor="middle" x="439.08" y="-143.9" font-family="Inter" font-size="13.00" fill="#f0f6fc">Servo</text>
+<text xml:space="preserve" text-anchor="middle" x="439.08" y="-128.3" font-family="Inter" font-size="13.00" fill="#f0f6fc">Motor</text>
+</g>
+<!-- esp32&#45;&gt;servo -->
+<g id="edge2" class="edge">
+<title>esp32-&gt;servo</title>
+<path fill="none" stroke="#7d8fa3" stroke-width="2.2" d="M262.69,-148.56C262.69,-148.56 394.88,-148.56 394.88,-148.56"/>
+<polygon fill="#7d8fa3" stroke="#7d8fa3" stroke-width="2.2" points="394.88,-151.36 402.88,-148.56 394.88,-145.76 394.88,-151.36"/>
+<text xml:space="preserve" text-anchor="middle" x="323.77" y="-157" font-family="Inter" font-size="10.00" fill="#7d8fa3"> PWM </text>
+</g>
+<!-- esp32&#45;&gt;zenoh -->
+<g id="edge5" class="edge">
+<title>esp32-&gt;zenoh</title>
+<path fill="none" stroke="#58a6ff" stroke-width="2.5" d="M262.44,-131.44C312.82,-131.44 396.02,-131.44 396.02,-131.44 396.02,-131.44 396.02,-80.14 396.02,-80.14"/>
+<polygon fill="#58a6ff" stroke="#58a6ff" stroke-width="2.5" points="398.82,-80.14 396.02,-72.14 393.22,-80.14 398.82,-80.14"/>
+<text xml:space="preserve" text-anchor="middle" x="323.77" y="-100" font-family="Inter" font-size="10.00" fill="#58a6ff"> Wi-Fi / Zenoh </text>
+</g>
+<!-- router -->
+<g id="node5" class="node">
+<title>router</title>
+<path fill="#211a32" stroke="#bf8cff" stroke-width="2.2" d="M674.69,-67.68C674.69,-67.68 595.16,-67.68 595.16,-67.68 589.16,-67.68 583.16,-61.68 583.16,-55.68 583.16,-55.68 583.16,-28.32 583.16,-28.32 583.16,-22.32 589.16,-16.32 595.16,-16.32 595.16,-16.32 674.69,-16.32 674.69,-16.32 680.69,-16.32 686.69,-22.32 686.69,-28.32 686.69,-28.32 686.69,-55.68 686.69,-55.68 686.69,-61.68 680.69,-67.68 674.69,-67.68"/>
+<text xml:space="preserve" text-anchor="middle" x="634.93" y="-45.9" font-family="Inter" font-size="13.00" fill="#f0f6fc">Zenoh Router</text>
+<text xml:space="preserve" text-anchor="middle" x="634.93" y="-30.3" font-family="Inter" font-size="13.00" fill="#f0f6fc">zenohd</text>
+</g>
+<!-- servo&#45;&gt;router -->
+<!-- zenoh&#45;&gt;router -->
+<g id="edge3" class="edge">
+<title>zenoh-&gt;router</title>
+<path fill="none" stroke="#a371f7" stroke-width="2.2" d="M493.37,-42C493.37,-42 570.89,-42 570.89,-42"/>
+<polygon fill="#a371f7" stroke="#a371f7" stroke-width="2.2" points="570.89,-44.8 578.89,-42 570.89,-39.2 570.89,-44.8"/>
+<text xml:space="preserve" text-anchor="middle" x="537.72" y="-59" font-family="Inter" font-size="10.00" fill="#a371f7"> Wi-Fi </text>
+</g>
+<!-- subscriber -->
+<g id="node6" class="node">
+<title>subscriber</title>
+<path fill="#21262d" stroke="#8b949e" stroke-width="2" d="M922.63,-67.68C922.63,-67.68 822.89,-67.68 822.89,-67.68 816.89,-67.68 810.89,-61.68 810.89,-55.68 810.89,-55.68 810.89,-28.32 810.89,-28.32 810.89,-22.32 816.89,-16.32 822.89,-16.32 822.89,-16.32 922.63,-16.32 922.63,-16.32 928.63,-16.32 934.63,-22.32 934.63,-28.32 934.63,-28.32 934.63,-55.68 934.63,-55.68 934.63,-61.68 928.63,-67.68 922.63,-67.68"/>
+<text xml:space="preserve" text-anchor="middle" x="872.76" y="-45.9" font-family="Inter" font-size="13.00" fill="#f0f6fc">Python</text>
+<text xml:space="preserve" text-anchor="middle" x="872.76" y="-30.3" font-family="Inter" font-size="13.00" fill="#f0f6fc">Zenoh Subscriber</text>
+</g>
+<!-- router&#45;&gt;subscriber -->
+<g id="edge6" class="edge">
+<title>router-&gt;subscriber</title>
+<path fill="none" stroke="#8b949e" stroke-width="2.5" d="M687.71,-42C687.71,-42 798.22,-42 798.22,-42"/>
+<polygon fill="#8b949e" stroke="#8b949e" stroke-width="2.5" points="798.22,-44.8 806.22,-42 798.22,-39.2 798.22,-44.8"/>
+<text xml:space="preserve" text-anchor="middle" x="748.79" y="-45" font-family="Inter" font-size="10.00" fill="#8b949e"> measurements </text>
+</g>
+<!-- viewer -->
+<g id="node7" class="node">
+<title>viewer</title>
+<path fill="#21262d" stroke="#b1bac4" stroke-width="2.2" d="M1159.02,-67.68C1159.02,-67.68 1070.83,-67.68 1070.83,-67.68 1064.83,-67.68 1058.83,-61.68 1058.83,-55.68 1058.83,-55.68 1058.83,-28.32 1058.83,-28.32 1058.83,-22.32 1064.83,-16.32 1070.83,-16.32 1070.83,-16.32 1159.02,-16.32 1159.02,-16.32 1165.02,-16.32 1171.02,-22.32 1171.02,-28.32 1171.02,-28.32 1171.02,-55.68 1171.02,-55.68 1171.02,-61.68 1165.02,-67.68 1159.02,-67.68"/>
+<text xml:space="preserve" text-anchor="middle" x="1114.93" y="-45.9" font-family="Inter" font-size="13.00" fill="#f0f6fc">Real-time</text>
+<text xml:space="preserve" text-anchor="middle" x="1114.93" y="-30.3" font-family="Inter" font-size="13.00" fill="#f0f6fc">LiDAR Viewer</text>
+</g>
+<!-- subscriber&#45;&gt;viewer -->
+<g id="edge4" class="edge">
+<title>subscriber-&gt;viewer</title>
+<path fill="none" stroke="#8b949e" stroke-width="2.2" d="M935.44,-42C935.44,-42 1046.57,-42 1046.57,-42"/>
+<polygon fill="#8b949e" stroke="#8b949e" stroke-width="2.2" points="1046.57,-44.8 1054.57,-42 1046.57,-39.2 1046.57,-44.8"/>
+<text xml:space="preserve" text-anchor="middle" x="996.73" y="-59" font-family="Inter" font-size="10.00" fill="#8b949e"> measurements </text>
+</g>
+</g>
+</svg>
