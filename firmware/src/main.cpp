@@ -1,35 +1,39 @@
 #include <Arduino.h>
 
+#include "lidar/tf_luna.hpp"
+
 HardwareSerial tfLunaSerial(2);
 
-constexpr uint32_t TF_LUNA_BAUDRATE = 115200;
-constexpr int TF_LUNA_RX_PIN = 16;
-constexpr int TF_LUNA_TX_PIN = 17;
+TfLuna lidar(
+    tfLunaSerial,
+    16,
+    17
+);
 
 void setup()
 {
     Serial.begin(115200);
 
-    tfLunaSerial.begin(
-        TF_LUNA_BAUDRATE,
-        SERIAL_8N1,
-        TF_LUNA_RX_PIN,
-        TF_LUNA_TX_PIN
-    );
+    delay(500);
+
+    lidar.begin();
 
     Serial.println();
-    Serial.println("TF-Luna UART test");
-    Serial.println("------------------");
+    Serial.println("TF-Luna driver test");
+    Serial.println("===================");
 }
 
 void loop()
 {
-    while (tfLunaSerial.available())
+    TfLunaMeasurement measurement;
+
+    if (lidar.update(measurement))
     {
-        const uint8_t byte = tfLunaSerial.read();
-
-        Serial.printf("%02X ", byte);
+        Serial.printf(
+            "Distance: %u cm | Signal: %u | Temperature: %.1f C\n",
+            measurement.distance_cm,
+            measurement.signal_strength,
+            measurement.temperature_c
+        );
     }
-
-    delay(10);
 }
